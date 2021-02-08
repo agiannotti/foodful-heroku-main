@@ -82,9 +82,9 @@ Remove resource by id from list of resources.
 
 ## Technology Used
 
-•   Heroku for provisioning database and hosting server
-•   Express
-•   Node
-•   Supertest, Mocha, Chai for integrated testing
-•   Knex for building queries to relational database
-•   PostgreSQL
+• Heroku for provisioning database and hosting server  
+• Express  
+• Node  
+• Supertest, Mocha, Chai for integrated testing  
+• Knex for building queries to relational database  
+• PostgreSQL  
