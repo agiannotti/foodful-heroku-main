@@ -1,6 +1,7 @@
 # Foodful Server + API Application
 
-[Live Deployment](https://enigmatic-meadow-50986.herokuapp.com)
+[Live Server Deployment](https://enigmatic-meadow-50986.herokuapp.com)
+[Live Client Deployment](https://foodful.agiannotti.vercel.app/)
 
 ## Installation
 
