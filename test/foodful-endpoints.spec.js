@@ -59,6 +59,21 @@ describe('Resources Endpoints', function () {
     });
   });
 
+  describe(`POST /api/resources/`, () => {
+    it('responds with 201 and posts the resource', () => {
+      const newResource = {
+        title: 'new title',
+        content: 'new content',
+        zipcode: '123123',
+      };
+
+      return supertest(app)
+        .post(`/api/resources`)
+        .send(newResource)
+        .expect(201);
+    });
+  });
+
   describe(`PATCH /api/resources/:resource_id`, () => {
     context('Given there are resources in the database', () => {
       const testResources = makeResourceArray();
@@ -67,7 +82,7 @@ describe('Resources Endpoints', function () {
       });
 
       it('responds with 204 and updates the resource', () => {
-        const idToUpdate = 2;
+        const id = 2;
         const updateresource = {
           title: 'updated resource name',
           date_published: '2021-02-01T03:01:17.027Z',
@@ -77,18 +92,16 @@ describe('Resources Endpoints', function () {
         };
 
         const expectedresource = {
-          ...testResources[idToUpdate - 1],
+          ...testResources[id - 1],
           ...updateresource,
         };
 
         return supertest(app)
-          .patch(`/api/resources/${idToUpdate}`)
+          .patch(`/api/resources/${id}`)
           .send(updateresource)
           .expect(204)
           .then((res) =>
-            supertest(app)
-              .get(`/api/resources/${idToUpdate}`)
-              .expect(expectedresource)
+            supertest(app).get(`/api/resources/${id}`).expect(expectedresource)
           );
       });
     });
