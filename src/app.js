@@ -6,7 +6,6 @@ const cors = require('cors');
 const helmet = require('helmet');
 const morganOption = NODE_ENV === 'production' ? 'tiny' : 'common';
 const errorHandler = require('./error-handler');
-// const logger = require('/logger');
 const ResourceRouter = require('./resources/resource-router');
 
 const app = express();
